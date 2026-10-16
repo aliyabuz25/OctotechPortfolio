@@ -10,7 +10,7 @@ services:
       - "traefik.http.routers.octoagency.entrypoints=web,websecure"
       - "traefik.http.routers.octoagency.priority=100"
       - "traefik.http.routers.octoagency.tls=true"
-      - "traefik.http.services.octoagency.loadbalancer.server.port=5001"
+      - "traefik.http.services.octoagency.loadbalancer.server.port=8000"
 
 networks:
   edge:

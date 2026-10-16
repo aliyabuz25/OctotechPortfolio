@@ -4,7 +4,7 @@ services:
     image: drakkarsoftware/octobot:stable
     restart: unless-stopped
     expose:
-      - "5001"
+      - "8000"
     volumes:
       - octobot-user-data:/octobot/user
       - octobot-logs:/octobot/logs
@@ -20,7 +20,7 @@ services:
       - "traefik.http.routers.octoagency.entrypoints=web,websecure"
       - "traefik.http.routers.octoagency.priority=100"
       - "traefik.http.routers.octoagency.tls=true"
-      - "traefik.http.services.octoagency.loadbalancer.server.port=5001"
+      - "traefik.http.services.octoagency.loadbalancer.server.port=8000"
 
 volumes:
   octobot-user-data:

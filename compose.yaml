@@ -6,7 +6,7 @@ services:
     image: drakkarsoftware/octobot:stable
     restart: unless-stopped
     expose:
-      - "5001"
+      - "8000"
     volumes:
       - octobot-user-data:/octobot/user
       - octobot-logs:/octobot/logs
