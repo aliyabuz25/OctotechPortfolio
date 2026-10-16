@@ -1,4 +1,4 @@
-# OctoBot behind Traefik edge
+# Octotech Site behind Traefik edge
 
 Bu quruluş OctoBot-u mövcud `edge` Traefik şəbəkəsi və `octobot-net` şəbəkəsi ilə birləşdirir. Traefik `agency2.octotech.az` hostunu HTTPS/443 üzərindən OctoBot-un daxili `8000` portuna yönləndirir. OctoBot portu hosta birbaşa açılmır.
 
@@ -30,7 +30,7 @@ Vəziyyət və loglar:
 
 ```sh
 docker compose -f compose.yaml -f compose.edge.yaml ps
-docker compose -f compose.yaml -f compose.edge.yaml logs -f octobot
+docker compose -f compose.yaml -f compose.edge.yaml logs -f octotech-site
 ```
 
 ## Davamlı məlumat

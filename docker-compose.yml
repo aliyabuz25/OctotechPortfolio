@@ -1,6 +1,6 @@
 services:
-  octobot:
-    container_name: octobot
+  octotech-site:
+    container_name: octotech-site
     image: drakkarsoftware/octobot:stable
     restart: unless-stopped
     expose:
@@ -16,11 +16,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=edge"
-      - "traefik.http.routers.octoagency.rule=Host(`agency2.octotech.az`)"
-      - "traefik.http.routers.octoagency.entrypoints=web,websecure"
-      - "traefik.http.routers.octoagency.priority=100"
-      - "traefik.http.routers.octoagency.tls=true"
-      - "traefik.http.services.octoagency.loadbalancer.server.port=8000"
+      - "traefik.http.routers.octotech-site.rule=Host(`agency2.octotech.az`)"
+      - "traefik.http.routers.octotech-site.entrypoints=web,websecure"
+      - "traefik.http.routers.octotech-site.priority=100"
+      - "traefik.http.routers.octotech-site.tls=true"
+      - "traefik.http.services.octotech-site.loadbalancer.server.port=8000"
 
 volumes:
   octobot-user-data:

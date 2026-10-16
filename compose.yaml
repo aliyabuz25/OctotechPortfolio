@@ -1,8 +1,8 @@
-name: octobot
+name: octotech-site
 
 services:
-  octobot:
-    container_name: octobot
+  octotech-site:
+    container_name: octotech-site
     image: drakkarsoftware/octobot:stable
     restart: unless-stopped
     expose:
