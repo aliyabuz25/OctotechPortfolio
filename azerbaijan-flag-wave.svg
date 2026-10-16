@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Azərbaycan bayrağı</title>
+  <desc id="desc">Dalğalanan mavi, qırmızı və yaşıl zolaqlar, ağ aypara və səkkizguşəli ulduz.</desc>
+  <defs>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+      <stop offset=".18" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset=".45" stop-color="#000" stop-opacity=".12"/>
+      <stop offset=".72" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".2"/>
+      <animate attributeName="x1" values="-1;1;-1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;2;1" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <path id="star" d="M0-42 10-15 30-30 20-7 47-8 24 7 40 28 15 18 8 45-2 20-22 37-14 10-42 12-19-3-35-26-10-16Z"/>
+  </defs>
+  <g>
+    <animateTransform attributeName="transform" type="skewX" values="-1.5;1.5;-1.5" dur="5s" repeatCount="indefinite"/>
+    <path fill="#00b5e2" d="M0 0h1200v225H0z"/>
+    <path fill="#ed2939" d="M0 225h1200v225H0z"/>
+    <path fill="#3f9c35" d="M0 450h1200v225H0z"/>
+    <path fill="url(#cloth)" d="M0 0h1200v675H0z"/>
+    <circle cx="570" cy="337.5" r="77" fill="#fff"/>
+    <circle cx="594" cy="317" r="62" fill="#ed2939"/>
+    <use href="#star" transform="translate(676 337.5)" fill="#fff"/>
+  </g>
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      animate, animateTransform { display: none; }
+    }
+  </style>
+</svg>
