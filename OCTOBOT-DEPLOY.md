@@ -2,6 +2,10 @@
 
 Bu quruluş OctoBot-u mövcud `edge` Traefik şəbəkəsi və `octobot-net` şəbəkəsi ilə birləşdirir. Traefik `agency2.octotech.az` hostunu HTTPS/443 üzərindən OctoBot-un daxili `8000` portuna yönləndirir. OctoBot portu hosta birbaşa açılmır.
 
+## Verilənlər bazası rejimi
+
+Bu Compose stack PostgreSQL və ya ayrıca verilənlər bazası konteyneri yaratmır. OctoBot Node tək instansiya (standalone) rejimində DBOS workflow vəziyyətini öz daxili SQLite faylında saxlayır; paylaşdığınız logda `sqlite:///tasks.db` və `DBOS launched!` görünməsi normal başlanğıcdır, xəta deyil. PostgreSQL xəbərdarlığı yalnız istehsal mühitində çox instansiyalı istifadə üçün tövsiyədir. OctoBot-un scheduler-i DBOS vəziyyətini saxlamağa ehtiyac duyduğundan bu daxili SQLite-ı tamamilə söndürmək dəstəklənmir.
+
 ## Tələblər
 
 - Docker Engine və Docker Compose v2
