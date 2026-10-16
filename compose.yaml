@@ -5,6 +5,12 @@ services:
     container_name: octotech-site
     image: drakkarsoftware/octobot:stable
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8000/ >/dev/null || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
     expose:
       - "8000"
     volumes:

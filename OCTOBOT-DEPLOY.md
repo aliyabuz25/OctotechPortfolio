@@ -1,6 +1,6 @@
 # Octotech Site behind Traefik edge
 
-Bu quruluş OctoBot-u mövcud `edge` Traefik şəbəkəsi və `octobot-net` şəbəkəsi ilə birləşdirir. Traefik `agency2.octotech.az` hostunu HTTPS/443 üzərindən OctoBot-un daxili `8000` portuna yönləndirir. OctoBot portu hosta birbaşa açılmır.
+Bu quruluş OctoBot-u mövcud `edge` Traefik şəbəkəsi və `octobot-net` şəbəkəsi ilə birləşdirir. Traefik `agency2.octotech.az` hostunu HTTPS/443 üzərindən OctoBot-un daxili `8000` portuna yönləndirir. OctoBot portu hosta birbaşa açılmır. OctoBot imajının daxili yoxlaması standart olaraq 5001 portuna baxır; bu Node API quruluşunda API 8000-də dinlədiyi üçün Compose sağlamlıq yoxlaması 8000 portuna uyğunlaşdırılıb.
 
 ## Verilənlər bazası rejimi
 
