@@ -1,0 +1,27 @@
+name: octobot
+
+services:
+  octobot:
+    container_name: octobot
+    image: drakkarsoftware/octobot:stable
+    restart: unless-stopped
+    expose:
+      - "5001"
+    volumes:
+      - octobot-user-data:/octobot/user
+      - octobot-logs:/octobot/logs
+      - octobot-backtesting:/octobot/backtesting
+      - octobot-tentacles:/octobot/tentacles
+    networks:
+      - octobot-net
+
+volumes:
+  octobot-user-data:
+  octobot-logs:
+  octobot-backtesting:
+  octobot-tentacles:
+
+networks:
+  octobot-net:
+    external: true
+    name: octobot-net
