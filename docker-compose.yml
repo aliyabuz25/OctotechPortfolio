@@ -1,0 +1,37 @@
+services:
+  octobot:
+    container_name: octobot
+    image: drakkarsoftware/octobot:stable
+    restart: unless-stopped
+    expose:
+      - "5001"
+    volumes:
+      - octobot-user-data:/octobot/user
+      - octobot-logs:/octobot/logs
+      - octobot-backtesting:/octobot/backtesting
+      - octobot-tentacles:/octobot/tentacles
+    networks:
+      - octobot-net
+      - edge
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=edge"
+      - "traefik.http.routers.octoagency.rule=Host(`agency2.octotech.az`)"
+      - "traefik.http.routers.octoagency.entrypoints=web,websecure"
+      - "traefik.http.routers.octoagency.priority=100"
+      - "traefik.http.routers.octoagency.tls=true"
+      - "traefik.http.services.octoagency.loadbalancer.server.port=5001"
+
+volumes:
+  octobot-user-data:
+  octobot-logs:
+  octobot-backtesting:
+  octobot-tentacles:
+
+networks:
+  edge:
+    external: true
+    name: edge
+  octobot-net:
+    external: true
+    name: octobot-net
